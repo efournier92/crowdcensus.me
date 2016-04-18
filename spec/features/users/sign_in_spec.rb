@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 feature 'Sign in', :devise do
   scenario 'user cannot sign in if not registered' do
     signin('test@example.com', 'please123')
