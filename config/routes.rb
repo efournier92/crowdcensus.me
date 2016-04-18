@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root to: 'visitors#index'
   devise_for :users
   resources :users
-  resources :censuses, only: [:new]
+  resources :censuses, only: [:index, :new, :create]
 end

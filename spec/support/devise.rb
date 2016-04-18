@@ -1,3 +1,3 @@
-RSpec.configure do |config|
-  config.include Devise::TestHelpers, :type => :controller
+Devise.setup do |config|
+  config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
 end

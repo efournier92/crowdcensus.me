@@ -1,5 +1,5 @@
 Devise.setup do |config|
-  
+
   config.mailer_sender = 'no-reply@' + Rails.application.secrets.domain_name
   require 'devise/orm/active_record'
 
@@ -20,5 +20,7 @@ Devise.setup do |config|
   config.reset_password_within = 6.hours
 
   config.sign_out_via = :delete
+
+  config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
 
 end
