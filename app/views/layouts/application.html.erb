@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Crowdcensus" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "CrowdCensus" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Crowdcensus" %>">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'vendor/modernizr' %>
@@ -14,6 +14,7 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
+      <body style="background-color:#288fb4">
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>

@@ -18,7 +18,7 @@ feature 'User edit', :devise do
     expect(page).to have_content(/.*#{txts[0]}.*|.*#{txts[1]}.*/)
   end
 
-  scenario "user cannot cannot edit another user's profile", :me do
+  scenario "user cannot edit another user's profile", :me do
     me = FactoryGirl.create(:user)
     other = FactoryGirl.create(:user, email: 'other@example.com')
     login_as(me, :scope => :user)
