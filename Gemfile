@@ -9,12 +9,14 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'minitest', '~> 5.8.4'
 
-gem 'pry'
 gem 'pg'
+gem 'pry'
+gem 'pry-rails'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'high_voltage'
 gem 'simple_form'
+gem 'highcharts-rails'
 gem 'foundation-rails', '~> 5.5'
 
 group :development, :test do

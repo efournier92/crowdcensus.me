@@ -127,6 +127,8 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     high_voltage (3.0.0)
+    highcharts-rails (4.2.3)
+      railties (>= 3.1)
     i18n (0.7.0)
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5)
@@ -169,6 +171,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -298,12 +302,14 @@ DEPENDENCIES
   faker
   foundation-rails (~> 5.5)
   high_voltage
+  highcharts-rails
   jbuilder (~> 2.0)
   jquery-rails
   launchy
   minitest (~> 5.8.4)
   pg
   pry
+  pry-rails
   quiet_assets
   rails (= 4.2.6)
   rails_12factor

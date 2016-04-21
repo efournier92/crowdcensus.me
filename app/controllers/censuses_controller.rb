@@ -1,12 +1,20 @@
 class CensusesController < ApplicationController
 
   def index
-    @censuses = Census.all
+    @censuses  = Census.all
+    @opinion   = Opinion.new
+    @comment   = Comment.new
+    seconds_left = Census.last.end_time - Time.now
+    hours_left   = seconds_left / 3600
+    hours_left_int = hours_left.to_i
+    minutes_left_unform = ((hours_left - hours_left_int) * 60).to_i
+    minutes_left = sprintf '%02d', minutes_left_unform
+    @time_left = "#{hours_left_int}:#{minutes_left}"
   end
 
   def new
-    @census = Census.new
-    @durations = ['1 Hour', '24 Hours', '72 Hours']
+    @census    = Census.new
+    @durations = Census::DURATIONS
   end
 
   def show
@@ -15,11 +23,15 @@ class CensusesController < ApplicationController
   end
 
   def create
-    census = Census.new(census_params)
-    census.user = current_user
+    census          = Census.new(census_params)
+    census.user     = current_user
+    duration_key    = params[:census][:duration]
+    duration_value  = Census::DURATIONS[:"#{duration_key}"]
+    census.end_time = Time.now + duration_value.hours
+    census.active   = 1
     if census.save
       flash[:success] = 'Census Created!'
-      redirect_to census_path(census)
+      redirect_to censuses_path
     else
       flash[:failure] = census.errors.full_messages
       flash[:failure] = '. Creation Failure'
@@ -31,6 +43,6 @@ class CensusesController < ApplicationController
 
   def census_params
     params.require(:census).permit(:description, :option_01,
-    :option_02, :option_03, :duration)
+    :option_02, :option_03, :duration, :end_time)
   end
 end

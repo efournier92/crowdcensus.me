@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 feature 'user adds census' do
+  let(:census) = FactoryGirl.create(census)
   scenario 'accesses new census page from home' do
     visit root_path
     click_link('New Census')
@@ -9,7 +10,7 @@ feature 'user adds census' do
   end
 
   scenario 'creates a new census' do
-    
+
     visit new_census_path
     fill_in(:census_description, with: 'Who would make the best president?')
     fill_in(:census_option_01, with: 'Gary Busey')

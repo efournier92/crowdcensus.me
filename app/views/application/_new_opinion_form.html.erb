@@ -1,6 +1,6 @@
 <h1><%= @census.description %></h1>
 
-<%= simple_form_for [@census, @opinion] do |f| %>
+<%= simple_form_for [@censuses, @opinion] do |f| %>
 <%= f.input :chosen_option, collection: [@census.option_01, @census.option_02, @census.option_03], as: :radio_buttons %>
 
 <%= f.button :submit, 'Cast Opinion' %>
