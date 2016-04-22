@@ -16,6 +16,7 @@ gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'high_voltage'
 gem 'simple_form'
+gem 'gruff'
 gem 'highcharts-rails'
 gem 'foundation-rails', '~> 5.5'
 
