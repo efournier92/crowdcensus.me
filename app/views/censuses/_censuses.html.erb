@@ -1,0 +1,46 @@
+<% @censuses.each do |census| %>
+  <% opinions_01 = Opinion.where(census_id: census, chosen_option: 1).count %>
+  <% opinions_02 = Opinion.where(census_id: census, chosen_option: 2).count %>
+  <% opinions_03 = Opinion.where(census_id: census, chosen_option: 3).count %>
+  <% op1 = census.option_01 %>
+  <div class="cast_census">
+  <div class="cast_census left">
+    <div class="cast_census description">
+      <strong><%= census.description %></strong>
+    </div>
+    <div class="cast_census option">
+      <%= simple_form_for [census, @opinion] do |f| %>
+        <%= f.input :chosen_option,
+          collection: [census.option_01, census.option_02, census.option_03],
+          as: :radio_buttons, label: false %>
+    </div>
+    <%= will_paginate @censuses,
+      page_links: false,
+      params: { my_excluded_param: nil } %>
+  </div>
+  <div class="cast_census right">
+    <div class="cast_census time">
+    <%= 'Time Left' %><br>
+    <%= @time_left %>
+  </div>
+    <div class="cast_census chart">
+    <%= pie_chart ({
+      census.option_01 => opinions_01,
+      census.option_02 => opinions_02,
+      census.option_03 => opinions_03}) %>
+    </div>
+
+    <div class="cast_census submit">
+
+
+      <%= f.button :submit, 'Cast Opinion' %>
+      </div>
+  </div>
+
+
+
+  <% end %>
+<% end %>
+
+</div>
+</div>

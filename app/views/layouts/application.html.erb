@@ -6,8 +6,8 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Crowdcensus" %>">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'highcharts.js', 'chartkick' %>
     <%= csrf_meta_tags %>
-    <script src="http://code.highcharts.com/highcharts.js"></script>
   </head>
   <body>
     <header>

@@ -15,6 +15,7 @@ module Crowdcensus
         request_specs: false
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
+    config.assets.paths << "#{Rails.root}/app/assets/fonts"
     config.assets.precompile += %w( vendor/modernizr )
     config.active_record.raise_in_transactional_callbacks = true
   end

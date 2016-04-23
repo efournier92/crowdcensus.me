@@ -1,7 +1,6 @@
 class CensusesController < ApplicationController
-
   def index
-    @censuses  = Census.all
+    @censuses  = Census.paginate(page: params[:page], per_page: 1)
     @opinion   = Opinion.new
     @comment   = Comment.new
     seconds_left = Census.last.end_time - Time.now
