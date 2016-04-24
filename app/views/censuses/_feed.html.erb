@@ -1,0 +1,25 @@
+<% @censuses_closed.each do |census| %>
+  <% results = census.results %>
+  <div class="flex-container">
+    <div class="feed">
+      <% @censuses_closed.each do |census| %>
+        <% results = census.results %>
+        <%= census.end_time.strftime("Ended On %m/%d/%Y") %> <br>
+        <%= "Posted By: #{census.user.first_name} #{census.user.last_name}" %> <br>
+        <%= "For: #{census.duration}" %> <br>
+        <%= pie_chart ({
+          census.option_01 => results[0].to_i,
+          census.option_02 => results[1].to_i,
+          census.option_03 => results[2].to_i }) %>
+        <% end %>
+        <%= will_paginate @censuses_closed,
+            param_name: 'ended',
+            page_links: false %>
+      </div>
+
+      <div class="related to">
+        <li>Lorem ipsum dolor sit amet</li>
+      </div>
+      <% end %>
+
+</div>

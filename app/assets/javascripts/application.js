@@ -9,7 +9,14 @@ $(function () {
 });
 
 $(function() {
-  $(".sort_paginate_ajax th a, .sort_paginate_ajax .pagination a").on("click", function(){
+  $(".ajax_paginate").on("click", ".pagination a", function(){
+    $.getScript(this.href);
+    return false;
+  });
+});
+
+$(function() {
+  $(".ajax_paginate_ended").on("click", ".pagination a", function(){
     $.getScript(this.href);
     return false;
   });

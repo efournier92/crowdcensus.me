@@ -25,30 +25,42 @@
   )
 end
 
-20.times do
+10.times do
   Census.create!(
   description:  Faker::Hipster.sentence,
   option_01:    Faker::Lorem.sentence,
   option_02:    Faker::Lorem.sentence,
   option_03:    Faker::Lorem.sentence,
-  end_time:     Time.now + 72.hours,
-  active:       1,
-  user_id:      rand(1..20)
+  end_time:     Time.now + 2.hours,
+  active:       true,
+  user_id:      rand(1..10)
+  )
+end
+
+10.times do
+  Census.create!(
+  description:  Faker::Hipster.sentence,
+  option_01:    Faker::Lorem.sentence,
+  option_02:    Faker::Lorem.sentence,
+  option_03:    Faker::Lorem.sentence,
+  end_time:     Time.now + 2.hours,
+  active:       false,
+  user_id:      rand(1..10)
   )
 end
 
 1000.times do
   Opinion.create!(
-  user_id:       rand(1..20),
-  census_id:     rand(1..40),
+  user_id:       rand(1..10),
+  census_id:     rand(1..20),
   chosen_option: rand(1..3)
   )
 end
 
 60.times do
   Comment.create!(
-  user_id:    rand(1..20),
-  census_id:  rand(1..40),
+  user_id:    rand(1..10),
+  census_id:  rand(1..20),
   comment:    Faker::Hipster.sentence
   )
 end
