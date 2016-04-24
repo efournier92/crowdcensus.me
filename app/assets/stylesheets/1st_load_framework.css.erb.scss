@@ -12,10 +12,13 @@
 }
 
 @font-face {
-  font-family: 'OpenSans';
-  src: url('<%= asset_path("Rockwell.ttf") %>');
-  font-weight: bold;
-  font-style: normal;
+  font-family: "VarelaRound-Regular";
+  src: url(/assets/VarelaRound-Regular);
+}
+
+@font-face {
+  font-family: "timeburnerbold";
+  src: url(/assets/timeburnerbold);
 }
 
 main {
@@ -126,8 +129,7 @@ section {
 }
 
 .top-bar .name {
-  font-size:   rem-calc(13);
-  line-height: 70px;
+  line-height:         70px;
 }
 
 .top-bar .name a {
@@ -141,6 +143,7 @@ section {
   color:                   white;
   height:          rem-calc(100);
   width:           rem-calc(120);
+  font-size:        rem-calc(20);
   display:            table-cell;
   text-align:             center;
   vertical-align:         middle;
