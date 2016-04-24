@@ -1,39 +1,10 @@
 <div class="primary">
-  <div class="cast_census">
-    <% @census = Census.first %>
-    <div class="cast_census left">
-
-     <div class="cast_census description">
-       <%= @census.description %>
-     </div>
-
-     <div class="cast_census option">
-
-    <%= simple_form_for [@census, @opinion] do |f| %>
-    <%= f.input :chosen_option,
-      collection: [@census.option_01, @census.option_02, @census.option_03],
-      as: :radio_buttons, label: false %>
-    </div>
-
-    <div class="cast_census right">
-      <%= 'Time Left' %>
-      <%= @time_left %>
-    </div>
-    </div>
-
-    <%= f.button :submit, 'Cast Opinion' %>
-    <% end %>
+  <div class = "ajax_paginate">
+    <%= render 'cast_opinion' %>
   </div>
+<div class="ajax_paginate_ended">
+
+  <%= render 'feed' %>
 </div>
-<div class="flex-container">
-  <div class="feed">
-    <%= @census.end_time.strftime("Ended On %m/%d/%Y") %>
-    <%= "Posted By: #{@census.user.first_name} #{@census.user.last_name}" %>
-    <%= "For: #{@census.duration}" %>
-    <%= render partial: 'new_comment_form', object: @comment %>
-  </div>
-  <div class="related to">
-    <li>Lorem ipsum dolor sit amet</li>
-  </div>
-</div>
+
 </div>

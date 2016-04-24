@@ -1,12 +1,23 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require_tree .
 //= require highcharts
-//= require highcharts/highcharts-more
+//= require_tree .
 
 $(function () {
   $(document).foundation();
 });
 
-$(function () { $(document).foundation(); });
+$(function() {
+  $(".ajax_paginate").on("click", ".pagination a", function(){
+    $.getScript(this.href);
+    return false;
+  });
+});
+
+$(function() {
+  $(".ajax_paginate_ended").on("click", ".pagination a", function(){
+    $.getScript(this.href);
+    return false;
+  });
+});

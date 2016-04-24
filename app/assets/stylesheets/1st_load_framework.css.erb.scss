@@ -11,6 +11,13 @@
   @extend .text-center;
 }
 
+@font-face {
+  font-family: 'OpenSans';
+  src: url('<%= asset_path("Rockwell.ttf") %>');
+  font-weight: bold;
+  font-style: normal;
+}
+
 main {
   @include twelve-columns;
   background-color: #288fb4;
@@ -38,18 +45,19 @@ section {
   background:           #d9d9d9;
   flex-flow:           row wrap;
   display:                 flex;
-  width:                    95%;
+  width:                   100%;
   border-radius:           10px;
   margin-left:             auto;
   margin-right:            auto;
 }
 
 .cast_census.left {
-  width: 65%;
+  width: 60%;
+  left: 0px;
 }
 
 .cast_census.right {
-  width: 30%;
+  width: 40%;
 }
 
 .cast_census.description {
@@ -62,12 +70,35 @@ section {
   padding-right: 20px;
 }
 
+.cast_census.chart {
+  padding-left:  20px;
+  padding-right: 20px;
+}
+
+.cast_census.submit {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  margin: auto;
+}
+
+.cast_census.time {
+  width:         100%;
+  text-align:  center;
+  display:inline-block;
+  position:relative;
+
+}
+
 .feed {
   background:   #d9d9d9;
   width:            65%;
+  height:         400px;
   border-radius:   10px;
   padding:         10px;
   margin-top:      20px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .related.to {

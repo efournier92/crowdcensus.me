@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 feature 'user votes on census' do
-  let(:census) { FactoryGirl.create(:census) }
+  let!(:census) { FactoryGirl.create(:census) }
   scenario 'succesfully casts opinion' do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
-    visit census_path(census)
+    visit root_path
     choose(census.option_03)
     click_button('Cast Opinion')
 
@@ -18,5 +18,5 @@ feature 'user votes on census' do
   #   expect(page).to have_content('OOPS')
   #   expect(page).to have_content(census.description)
   # end
-  
+
 end

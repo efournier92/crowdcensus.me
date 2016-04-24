@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :users
   resources :censuses, only: [:index, :show, :new, :create] do
     resources :opinions, only: [:index, :new, :create]
-    resources :comments, only: [:new, :create]
+    resources :comments, only: [:index, :new, :create]
   end
 end

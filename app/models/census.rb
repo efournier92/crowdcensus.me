@@ -4,7 +4,7 @@ class Census < ActiveRecord::Base
   validates :description, presence: true
   validates :option_01,   presence: true
   validates :option_02,   presence: true
-  validates :active,      presence: true
+  validates :active,      inclusion: { in: [true, false] }
   validates :end_time,    presence: true
   validates :user_id,     presence: true
 
@@ -16,6 +16,13 @@ class Census < ActiveRecord::Base
     else
       true
     end
+  end
+
+  def results
+    opinions_01 = Opinion.where(census_id: self.id, chosen_option: 1).count
+    opinions_02 = Opinion.where(census_id: self.id, chosen_option: 2).count
+    opinions_03 = Opinion.where(census_id: self.id, chosen_option: 3).count
+    [opinions_01, opinions_02, opinions_03]
   end
 
 end

@@ -16,8 +16,12 @@ gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'high_voltage'
 gem 'simple_form'
-gem 'highcharts-rails'
+gem 'chartkick'
 gem 'foundation-rails', '~> 5.5'
+
+gem 'faker'
+gem 'will_paginate'
+gem 'will_paginate-foundation'
 
 group :development, :test do
   gem 'byebug'
