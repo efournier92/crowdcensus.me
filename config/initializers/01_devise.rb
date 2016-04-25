@@ -1,6 +1,6 @@
 Devise.setup do |config|
 
-  config.mailer_sender = 'no-reply@' + Rails.application.secrets.domain_name
+  config.mailer_sender = 'no-reply@crowdcensus.me' + Rails.application.secrets.domain_name
   require 'devise/orm/active_record'
 
   config.case_insensitive_keys = [:email]
