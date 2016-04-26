@@ -23,12 +23,12 @@
         <%= 'Time Left' %><br>
         <%= @time_left %>
       </div>
-
+      <% data = {
+        census.option_01 => results[0].to_i,
+        census.option_02 => results[1].to_i,
+        census.option_03 => results[2].to_i } %>
       <div class="cast_census chart">
-        <%= pie_chart ({
-          census.option_01 => results[0].to_i,
-          census.option_02 => results[1].to_i,
-          census.option_03 => results[2].to_i }) %>
+        <%= pie_chart data, colors: Color.pick %>
       </div>
 
       <div class="cast_census submit">
