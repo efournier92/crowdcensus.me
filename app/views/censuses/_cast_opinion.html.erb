@@ -1,8 +1,10 @@
 <% @censuses_active.each do |census| %>
   <% results = census.results %>
   <div class="cast_census">
+    <div class="section">
+
     <div class="cast_census description">
-      <strong><%= census.description %></strong>
+      <%= census.description %>
     </div>
     <div class="cast_census option">
       <ul>
@@ -29,20 +31,18 @@
       census.option_01 => results[0].to_i,
       census.option_02 => results[1].to_i,
       census.option_03 => results[2].to_i } %>
-      <div class="cast_census middle">
 
     <div class="cast_census chart">
-      <%= pie_chart data, colors: Color.pick %>
+      <%= pie_chart data, colors: Color.pick, height: "165px" %>
     </div>
 
-    <div class="cast_census pagination">
+<div class="pagination">
+
       <%= will_paginate @censuses_active,
         param_name: 'active',
         page_links: false,
         next_label:     image_tag("arrow_next.png", size: "50"),
-        previous_label: image_tag("arrow_back.png", size: "50"),
-        renderer: FoundationPagination::Rails %>
-    </div>
-  </div>
+        previous_label: image_tag("arrow_back.png", size: "50")%>
+      </div>
 </div>
 <% end %>

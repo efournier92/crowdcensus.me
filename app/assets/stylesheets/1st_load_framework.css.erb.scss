@@ -23,17 +23,13 @@
 
 main {
   @include twelve-columns;
-  background-color: #030a0e;
+  background-color: #03182d;
 }
 
 section {
   @extend .row;
   margin-top: 20px;
   background-color: #030a0e;
-}
-
-.primary {
-  padding: 15px;
 }
 
 .flex-container {
@@ -45,18 +41,17 @@ section {
 }
 
 .cast_census {
-  background:           #eaf9ff;
-  flex-flow:           row wrap;
-  display:                 flex;
-  width:                   100%;
-  border-radius:           10px;
-  margin-left:             auto;
-  margin-right:            auto;
+  background:    #dae8f5;
+  width:            100%;
+  border-radius:    10px;
+  margin-top:        5px;
+  margin-left:      auto;
+  margin-right:     auto;
 }
 
 .cast_census.left {
-  width: 60%;
-  left: 0px;
+  width:   60%;
+  left:    0px;
 }
 
 .cast_census.right {
@@ -64,66 +59,38 @@ section {
 }
 
 .cast_census.description {
-  width:   100%;
-  padding: 10px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.cast_census.middle {
-  width: 60%
+  width:          100%;
+  color:       #03182d;
+  font-weight:    bold;
+  text-align:   center;
+  padding-top:    10px;
+  margin-bottom:   8px;
+  font-size:      23px;
+  line-height:    23px;
 }
 
 .cast_census.option {
-  display:            table-cell;
-  vertical-align:         middle;
-  text-align:             center;
+  text-align:   center;
 }
 
 .cast_census.chart {
-  width:         50%;
-  text-align:  left;
-  display:inline-block;
-  position:relative;
+  width:          50%;
+  text-align:    left;
+  position:  relative;
   padding-left:  auto;
   padding-right: auto;
 }
 
-
-cast_census.pagination {
-  display:            table-cell;
-  vertical-align:         middle;
-  text-align:             center;
-}
-
-.pagination-previous disabled {
-  position: absolute;
-  left: 20%;
-}
-
-.pagination-previous {
-  position: absolute;
-  left: 20%;
-}
-
-
-.pagination-next a {
-  right: 20%;
-}
-
-
 .cast_census.time {
-  width:         50%;
-  display:            table-cell;
-  margin-top: 10px;
-  text-align:             center;
-  vertical-align:         middle;
+  width:         100%;
+  margin-top:   -10px;
+  text-align:  center;
 }
 
 .cast_census.submit {
-  display:            table-cell;
-  text-align:             center;
-  vertical-align:         middle;
+  display:       table-cell;
+  text-align:        center;
+  vertical-align:    middle;
 }
 
 .feed {
@@ -133,8 +100,8 @@ cast_census.pagination {
   border-radius:   10px;
   padding:         10px;
   margin-top:      20px;
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow:      scroll;
+  overflow-x:    hidden;
 }
 
 .related.to {
@@ -195,7 +162,10 @@ cast_census.pagination {
   @include six-columns-centered;
 }
 
-
+.pagination {
+  text-align: center;
+  padding-bottom: 5px;
+}
 
 .authform {
   padding-top: 30px;
@@ -206,6 +176,8 @@ cast_census.pagination {
 .authform form {
   @include panel();
   padding-bottom: 60px;
+  background-color: #a0c3ff;
+  border-color: transparent;
 }
 
 .authform form a {
@@ -271,13 +243,10 @@ h2 {
   padding: 0;
 }
 
-
 ul li{
-  color: #AAAAAA;
+  color: #103549;
   display: block;
-
   width: 100%;
-  height: 50px;
 }
 
 ul li input[type=radio]{
@@ -286,17 +255,16 @@ ul li input[type=radio]{
 }
 
 ul li label{
-  display:            table-cell;
   text-align:             center;
-  vertical-align:         middle;
-  font-weight: 300;
-  font-size: 1.35em;
+  font-size: 18px;
+  line-height: 18px;
+  margin-top: 7px;
   cursor: pointer;
   -webkit-transition: all 0.25s linear;
 }
 
 ul li:hover label{
-	color: blue;
+	color: #84a0d2;
 }
 
 input[type=radio]:checked ~ .check::before{
@@ -304,5 +272,17 @@ input[type=radio]:checked ~ .check::before{
 }
 
 input[type=radio]:checked ~ label{
-  color: #0DFF92;
+  color: #a0c3ff;
+}
+
+h1 {
+  font-size: 5em;
+  font-family: arial,helvetica;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  text-align:center;
 }

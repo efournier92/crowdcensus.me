@@ -1,5 +1,5 @@
 Chartkick.options = {
-height: "90px",
+  height: "140px",
 }
 
 module Color
