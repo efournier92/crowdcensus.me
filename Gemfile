@@ -18,6 +18,7 @@ gem 'high_voltage'
 gem 'simple_form'
 gem 'chartkick'
 gem 'foundation-rails', '~> 5.5'
+gem 'zurb-foundation'
 
 gem 'faker'
 gem 'will_paginate'

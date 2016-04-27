@@ -1,40 +1,48 @@
 <% @censuses_active.each do |census| %>
   <% results = census.results %>
   <div class="cast_census">
-    <div class="cast_census left">
-
-      <div class="cast_census description">
-        <strong><%= census.description %></strong>
-      </div>
-
-      <div class="cast_census option">
-        <%= simple_form_for [census, @opinion] do |f| %>
-          <%= f.input :chosen_option,
-            collection: [census.option_01, census.option_02, census.option_03],
-            as: :radio_buttons, label: false %>
-          <%= will_paginate @censuses_active,
-            param_name: 'active',
-            page_links: false %>
-      </div>
+    <div class="cast_census description">
+      <strong><%= census.description %></strong>
+    </div>
+    <div class="cast_census option">
+      <ul>
+        <li>
+          <%= "<input type=\"radio\" id=\"#{census.option_01}\" name=\"selector\">".html_safe %>
+          <%= "<label for=\"#{census.option_01}\">#{census.option_01}</label>".html_safe %>
+        </li>
+        <li>
+          <%= "<input type=\"radio\" id=\"#{census.option_02}\" name=\"selector\">".html_safe %>
+          <%= "<label for=\"#{census.option_02}\">#{census.option_02}</label>".html_safe %>
+        </li>
+        <li>
+          <%= "<input type=\"radio\" id=\"#{census.option_03}\" name=\"selector\">".html_safe %>
+          <%= "<label for=\"#{census.option_03}\">#{census.option_03}</label>".html_safe %>
+        </li>
+      </ul>
     </div>
 
-    <div class="cast_census right">
-      <div class="cast_census time">
-        <%= 'Time Left' %><br>
-        <%= @time_left %>
-      </div>
-      <% data = {
-        census.option_01 => results[0].to_i,
-        census.option_02 => results[1].to_i,
-        census.option_03 => results[2].to_i } %>
-      <div class="cast_census chart">
-        <%= pie_chart data, colors: Color.pick %>
-      </div>
-
-      <div class="cast_census submit">
-        <%= f.button :submit, 'Cast Opinion' %>
-      </div>
+    <div class="cast_census time">
+      <%= 'Time Left' %><br>
+      <%= @time_left %>
     </div>
-    <% end %>
-  <% end %>
+    <% data = {
+      census.option_01 => results[0].to_i,
+      census.option_02 => results[1].to_i,
+      census.option_03 => results[2].to_i } %>
+      <div class="cast_census middle">
+
+    <div class="cast_census chart">
+      <%= pie_chart data, colors: Color.pick %>
+    </div>
+
+    <div class="cast_census pagination">
+      <%= will_paginate @censuses_active,
+        param_name: 'active',
+        page_links: false,
+        next_label:     image_tag("arrow_next.png", size: "50"),
+        previous_label: image_tag("arrow_back.png", size: "50"),
+        renderer: FoundationPagination::Rails %>
+    </div>
+  </div>
 </div>
+<% end %>
