@@ -2,26 +2,27 @@
   <% results = census.results %>
   <div class="flex-container">
     <div class="feed">
+      <h3>Recently Closed</h3>
       <% @censuses_closed.each do |census| %>
-        <% results = census.results %>
-        <%= census.end_time.strftime("Ended On %m/%d/%Y") %> <br>
-        <%= "Posted By: #{census.user.first_name} #{census.user.last_name}" %> <br>
-        <%= "For: #{census.duration}" %> <br>
+      <%= census.description %>
+      <%= will_paginate @censuses_closed,
+        param_name: 'ended',
+        page_links: false,
+        next_label:     image_tag("arrow_next.png", size: "50"),
+        previous_label: image_tag("arrow_back.png", size: "50")%>
         <% data = {
           census.option_01 => results[0].to_i,
           census.option_02 => results[1].to_i,
           census.option_03 => results[2].to_i } %>
-        <div class="cast_census chart">
-          <%= pie_chart data, colors: Color.pick %>
-        </div>
-        <% end %>
-        <%= will_paginate @censuses_closed,
-            param_name: 'ended',
-            page_links: false %>
-      </div>
+          <div class="cast_census chart">
+            <%= pie_chart data, height: "150px", width: "150px", colors: Color.pick %>
+          </div>
 
-      <div class="related to">
-        <li>Lorem ipsum dolor sit amet</li>
+        <% results = census.results %>
+        <%= "Posted By: #{census.user.first_name} #{census.user.last_name}" %> <br>
+        <%= "For: #{census.duration}" %> <br>
+        <%= census.end_time.strftime("Ended On %m/%d/%Y") %> <br>
+        <% end %>
       </div>
       <% end %>
 
