@@ -9,6 +9,12 @@ $(function () {
 });
 
 $(function() {
+  $.scrollify({
+    section : "section",
+  });
+});
+
+$(function() {
   $(".ajax_paginate").on("click", ".pagination a", function(){
     $.getScript(this.href);
     return false;

@@ -1,6 +1,3 @@
-Chartkick.options = {
-  height: "180px",
-}
 
 module Color
   VIOLET  = ["#434669", "#7b829e", "#aaacb8"]
