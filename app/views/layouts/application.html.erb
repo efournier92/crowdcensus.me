@@ -7,8 +7,21 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'highcharts.js', 'chartkick' %>
+    <%= javascript_include_tag 'jquery.scrollify.js', 'chartkick' %>
     <link rel="stylesheet" type="text/css" href="scroller.css" />
-    <%= javascript_include_tag 'scroller.js' %>
+    <script>
+             $(function() {
+                   $.scrollify({
+        section : ".section",
+        easing: "easeOutExpo",
+        scrollSpeed: 800,
+        offset : 0,
+        scrollbars: true,
+        standardScrollElements: "",
+        setHeights: false,
+                 });
+             });
+         </script>
 
     <%= csrf_meta_tags %>
   </head>

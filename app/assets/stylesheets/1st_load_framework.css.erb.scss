@@ -24,12 +24,7 @@
 main {
   @include twelve-columns;
   background-color: #03182d;
-}
-
-section {
-  @extend .row;
-  margin-top: 20px;
-  background-color: #030a0e;
+  height: 100vh;
 }
 
 .flex-container {
@@ -40,11 +35,22 @@ section {
   margin-right:            auto;
 }
 
+.filler {
+  height: 5%;
+}
+
+.census-main {
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 52%;
+  transform: translateY(-48%);
+}
+
 .cast_census {
   background:    #dae8f5;
-  width:            100%;
   border-radius:    10px;
-  margin-top:        5px;
   margin-left:      auto;
   margin-right:     auto;
 }
@@ -63,9 +69,9 @@ section {
   color:       #03182d;
   font-weight:    bold;
   text-align:   center;
-  padding-top:    10px;
-  margin-bottom:   8px;
-  font-size:      23px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  font-size:      18px;
   line-height:    23px;
 }
 
@@ -83,7 +89,6 @@ section {
 
 .cast_census.time {
   width:         100%;
-  margin-top:   -10px;
   text-align:  center;
 }
 
@@ -124,7 +129,7 @@ section {
   background: #1d556f;
   width:         100%;
   margin-bottom:    0;
-  height:        90px;
+  height:        50px;
   position:  relative;
 }
 
@@ -214,17 +219,13 @@ section {
 
 @import url('http://fonts.googleapis.com/css?family=Lato');
 
-body, html{
-  height: 100%;
-  background: #222222;
-	font-family: 'Lato', sans-serif;
-}
+
 
 .container{
   display: block;
   position: absolute;
   margin: auto;
-  height: 450px;
+  height: 900px;
   width: 400px;
   bottom: 0; left:0; right: 0; top:0;
   padding: 0;
@@ -256,9 +257,8 @@ ul li input[type=radio]{
 
 ul li label{
   text-align:             center;
-  font-size: 18px;
+  padding-bottom: 8px;
   line-height: 18px;
-  margin-top: 7px;
   cursor: pointer;
   -webkit-transition: all 0.25s linear;
 }
@@ -284,5 +284,13 @@ h1 {
 }
 
 .section {
+  height: 80vh;
   text-align:center;
+  width:            90%;
+  border-radius:    10px;
+  margin-left:      auto;
+  margin-right:     auto;
+  margin-top:       auto;
+  margin-bottom: auto;
+
 }

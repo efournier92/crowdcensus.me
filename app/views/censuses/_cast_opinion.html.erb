@@ -1,8 +1,8 @@
 <% @censuses_active.each do |census| %>
   <% results = census.results %>
+  
   <div class="cast_census">
-    <div class="section">
-
+      <div class="filler"></div>
     <div class="cast_census description">
       <%= census.description %>
     </div>
@@ -44,5 +44,5 @@
         next_label:     image_tag("arrow_next.png", size: "50"),
         previous_label: image_tag("arrow_back.png", size: "50")%>
       </div>
-</div>
 <% end %>
+</div>
