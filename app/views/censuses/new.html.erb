@@ -2,10 +2,12 @@
 
 <%= simple_form_for Census.new do |f| %>
   <%= f.input :description, label:'Description' %>
-  <%= f.input :option_01, label: 'Option' %>
-  <%= f.input :option_02, label: 'Option' %>
-  <%= f.input :option_03, label: 'Option' %>
+  <%= f.input :option_01, label: 'Resolution' %>
+  <%= f.input :option_02, label: 'Resolution' %>
+  <%= f.input :option_03, label: 'Resolution' %>
   <%= f.input :duration,  collection: Census::DURATIONS.keys, selected: 1 %>
+  <div class="button_center">
 
-  <%= f.button :submit, 'Poll Crowdcensus' %>
+  <%= f.button :submit, 'Poll Crowdcensus'%>
+</div>
 <% end %>

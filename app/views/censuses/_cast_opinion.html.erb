@@ -7,17 +7,18 @@
       <%= census.description %>
     </div>
     <div class="cast_census option">
+      <form class="new_opinion" id="new_opinion" action="/censuses/1/opinions" accept-charset="UTF-8" method="post">
       <ul>
         <li>
-          <%= "<input type=\"radio\" id=\"#{census.option_01}\" name=\"selector\">".html_safe %>
+          <%= "<input type=\"radio\" id=\"#{census.option_01}\" name=\"opinion[chosen_option]\">".html_safe %>
           <%= "<label for=\"#{census.option_01}\">#{census.option_01}</label>".html_safe %>
         </li>
         <li>
-          <%= "<input type=\"radio\" id=\"#{census.option_02}\" name=\"selector\">".html_safe %>
+          <%= "<input type=\"radio\" id=\"#{census.option_02}\" name=\"opinion[chosen_option]\">".html_safe %>
           <%= "<label for=\"#{census.option_02}\">#{census.option_02}</label>".html_safe %>
         </li>
         <li>
-          <%= "<input type=\"radio\" id=\"#{census.option_03}\" name=\"selector\">".html_safe %>
+          <%= "<input type=\"radio\" id=\"#{census.option_03}\" name=\"opinion[chosen_option]\">".html_safe %>
           <%= "<label for=\"#{census.option_03}\">#{census.option_03}</label>".html_safe %>
         </li>
       </ul>
@@ -33,13 +34,10 @@
       census.option_03 => results[2].to_i } %>
 
     <div class="cast_census chart">
-    <%= pie_chart data, height: "200px", width: "200px", colors: Color.pick %>
+    <%= pie_chart data, height: "200px", colors: Color.pick %>
     </div>
 
     <div class="cast_census option">
-  <%= simple_form_for [census, @opinion] do |f| %>
-    <%= f.button :submit %>
-  <% end %>
 </div>
 
 
@@ -52,4 +50,6 @@
   </div>
 
 <% end %>
+<input type="submit" name="commit" value="Create Opinion" class="button-large">
+</form>
 </div>

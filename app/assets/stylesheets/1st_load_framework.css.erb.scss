@@ -27,6 +27,16 @@ main {
   height: 100vh;
 }
 
+main h1 {
+  color: #2a7ab9;
+  text-align: center;
+  margin-top: 10px;
+}
+
+main label {
+  color: #88bedc;
+}
+
 .flex-container {
   display:                 flex;
   flex-flow:           row wrap;
@@ -105,21 +115,6 @@ main {
   margin-top:      20px;
   overflow:      scroll;
   overflow-x:    hidden;
-}
-
-.related.to {
-  background:   #eaf9ff;
-  width:            15%;
-  border-radius:   10px;
-  margin-top:      20px;
-  max-width:      200px;
-}
-
-.panel {
-  background:  #eaf9ff;
-  margin-top:     30px;
-  width:         300px;
-  padding-bottom:  75%;
 }
 
 .top-bar {
@@ -242,6 +237,16 @@ main {
   @extend .button;
   @extend .radius;
   @extend .tiny;
+}
+
+.button-large {
+  @extend .button;
+  @extend .radius;
+  background-color: #0b559f;
+}
+
+.button_center {
+  text-align: center;
 }
 
 .submit {

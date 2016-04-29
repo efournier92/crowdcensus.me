@@ -1,4 +1,5 @@
 class OpinionsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def new
     @opinion = Opinion.new
     @census  =
@@ -27,7 +28,6 @@ class OpinionsController < ApplicationController
   private
 
   def opinion_params
-    binding.pry
     params.require(:opinion).permit(:chosen_option) unless nil
   end
 end

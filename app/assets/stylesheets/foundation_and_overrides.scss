@@ -466,7 +466,7 @@ $button-med: 60;
 // We use these to control button border styles.
 // $button-border-width: 0;
 // $button-border-style: solid;
-// $button-bg-color: #103549;
+$button-bg-color: #0b559f;
 // $button-bg-hover: transparent;
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: transparent;
@@ -650,7 +650,7 @@ $f-dropdown-max-width: 120px;
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: rem-calc(14);
 // $input-placeholder-font-color: #cccccc;
-// $input-bg-color: $white;
+$input-bg-color: #dae8f5;
 // $input-focus-bg-color: scale-color($white, $lightness: -2%);
 // $input-border-color: scale-color($white, $lightness: -20%);
 // $input-focus-border-color: scale-color($white, $lightness: -40%);
@@ -705,7 +705,7 @@ $f-dropdown-max-width: 120px;
 // $input-transition-fade-timing-function: linear;
 
 // Select variables
-// $select-bg-color: $ghost;
+$select-bg-color: #dae8f5;
 // $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%);
 
 
