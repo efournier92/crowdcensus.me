@@ -14,7 +14,6 @@ class OpinionsController < ApplicationController
     opinion = Opinion.new(opinion_params)
     opinion.user = current_user
     opinion.census   = Census.find(params[:census_id])
-
     if opinion.save
       flash[:success] = 'Opinion Cast!'
       redirect_to root_path

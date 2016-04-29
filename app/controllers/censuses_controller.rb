@@ -4,7 +4,6 @@ class CensusesController < ApplicationController
       page: params[:active], per_page: 1)
     @censuses_closed = Census.where(active: false).paginate(
       page: params[:ended], per_page: 1)
-    # @censuses  = Census.paginate(page: params[:page], per_page: 1)
     @opinion   = Opinion.new
     @comment   = Comment.new
     seconds_left = Census.last.end_time - Time.now

@@ -11,6 +11,7 @@ $(function () {
 $(function() {
   $.scrollify({
     section : "section",
+    sectionName: "section-name"
   });
 });
 
