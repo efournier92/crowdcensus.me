@@ -1,31 +1,36 @@
 <% @censuses_active.each do |census| %>
   <% results = census.results %>
-
   <div class="cast_census">
-    <div class="filler"></div>
-      <div class="cast_census description">
+      <div class="cast_census_description">
         <%= census.description %>
       </div>
 
-      <div class="cast_census option">
-        <form class="new_opinion" id="new_opinion" action="/censuses/1/opinions" accept-charset="UTF-8" method="post">
+      <div class="cast_census_option">
+        <%= "<form class=\"new_opinion\" id=\"new_opinion\"
+          action=\"/censuses/#{census}/opinions\" accept-charset=\"UTF-8\" method=\"post\">".html_safe %>
         <ul>
           <li>
-            <%= "<input type=\"radio\" id=\"#{census.option_01}\" name=\"opinion[chosen_option]\">".html_safe %>
-            <%= "<label for=\"#{census.option_01}\">#{census.option_01}</label>".html_safe %>
+            <%= "<input type=\"radio\" id=\"#{census.option_01}\"
+              name=\"opinion[chosen_option]\">".html_safe %>
+            <%= "<label for=\"#{census.option_01}\">
+              #{census.option_01}</label>".html_safe %>
           </li>
           <li>
-            <%= "<input type=\"radio\" id=\"#{census.option_02}\" name=\"opinion[chosen_option]\">".html_safe %>
-            <%= "<label for=\"#{census.option_02}\">#{census.option_02}</label>".html_safe %>
+            <%= "<input type=\"radio\" id=\"#{census.option_02}\"
+              name=\"opinion[chosen_option]\">".html_safe %>
+            <%= "<label for=\"#{census.option_02}\">
+              #{census.option_02}</label>".html_safe %>
           </li>
           <li>
-            <%= "<input type=\"radio\" id=\"#{census.option_03}\" name=\"opinion[chosen_option]\">".html_safe %>
-            <%= "<label for=\"#{census.option_03}\">#{census.option_03}</label>".html_safe %>
+            <%= "<input type=\"radio\" id=\"#{census.option_03}\"
+              name=\"opinion[chosen_option]\">".html_safe %>
+            <%= "<label for=\"#{census.option_03}\">
+              #{census.option_03}</label>".html_safe %>
           </li>
         </ul>
       </div>
 
-      <div class="cast_census time">
+      <div class="cast_census_time">
         <%= 'Time Left' %><br>
         <%= @time_left %>
       </div>
@@ -34,8 +39,8 @@
         census.option_02 => results[1].to_i,
         census.option_03 => results[2].to_i } %>
 
-      <div class="cast_census chart">
-        <%= pie_chart data, height: "200px", colors: Color.pick %>
+      <div class="chart">
+        <%= pie_chart data, height: "160px", colors: Color.pick %>
       </div>
 
       <div class="pagination">
