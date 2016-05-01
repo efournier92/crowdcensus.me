@@ -25,4 +25,12 @@ class Census < ActiveRecord::Base
     [opinions_01, opinions_02, opinions_03]
   end
 
+  def self.check_active
+    active = Census.all.where(active: true)
+    active.each do |census|
+      if census.end_time < DateTime.now
+        census.active = false
+      end
+    end
+  end
 end

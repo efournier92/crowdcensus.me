@@ -1,3 +1,4 @@
+require 'will_paginate/array'
 class CensusesController < ApplicationController
   def index
     @censuses_active = Census.where(active: true).paginate(
