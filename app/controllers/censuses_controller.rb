@@ -1,4 +1,8 @@
+require 'will_paginate/array'
+
 class CensusesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     @censuses_active = Census.where(active: true).paginate(
       page: params[:active], per_page: 1)
@@ -6,12 +10,6 @@ class CensusesController < ApplicationController
       page: params[:ended], per_page: 1)
     @opinion   = Opinion.new
     @comment   = Comment.new
-    seconds_left = Census.last.end_time - Time.now
-    hours_left   = seconds_left / 3600
-    hours_left_int = hours_left.to_i
-    minutes_left_unform = ((hours_left - hours_left_int) * 60).to_i
-    minutes_left = sprintf '%02d', minutes_left_unform
-    @time_left = "#{hours_left_int}:#{minutes_left}"
   end
 
   def new

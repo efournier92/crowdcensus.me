@@ -12,15 +12,16 @@ class OpinionsController < ApplicationController
 
   def create
     opinion = Opinion.new(opinion_params)
+
     opinion.user = current_user
     opinion.census   = Census.find(params[:census_id])
     if opinion.save
       flash[:success] = 'Opinion Cast!'
-      redirect_to root_path
+      redirect_to censuses_path
     else
       flash[:failure] = @opinion.errors.full_messages
       flash[:failure] = '. OOPS!'
-      redirect_to root_path
+      redirect_to censuses_path
     end
   end
 

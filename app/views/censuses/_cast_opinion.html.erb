@@ -1,43 +1,37 @@
 <% @censuses_active.each do |census| %>
   <% results = census.results %>
   <div class="cast_census">
+    <%= simple_form_for [census, @opinion] do |f| %>
+    <script>
+      $(document).ready(function() {
+          $('label').click(function() {
+              $('label').removeClass('highlightBackground');
+              $(this).addClass('highlightBackground');
+          });
+      });
+    </script>
+    <div class="cast_census_description_container">
       <div class="cast_census_description">
         <%= census.description %>
       </div>
+    </div>
+    <div class="cast_census_option">
+      <ul>
+        <%= f.input :chosen_option,
+          collection: [census.option_01, census.option_02, census.option_03],
+          as: :radio_buttons, label: false, item_wrapper_tag: :li %>
+      </ul>
+    </div>
 
-      <div class="cast_census_option">
-        <%= "<form class=\"new_opinion\" id=\"new_opinion\"
-          action=\"/censuses/#{census}/opinions\" accept-charset=\"UTF-8\" method=\"post\">".html_safe %>
-        <ul>
-          <li>
-            <%= "<input type=\"radio\" id=\"#{census.option_01}\"
-              name=\"opinion[chosen_option]\">".html_safe %>
-            <%= "<label for=\"#{census.option_01}\">
-              #{census.option_01}</label>".html_safe %>
-          </li>
-          <li>
-            <%= "<input type=\"radio\" id=\"#{census.option_02}\"
-              name=\"opinion[chosen_option]\">".html_safe %>
-            <%= "<label for=\"#{census.option_02}\">
-              #{census.option_02}</label>".html_safe %>
-          </li>
-          <li>
-            <%= "<input type=\"radio\" id=\"#{census.option_03}\"
-              name=\"opinion[chosen_option]\">".html_safe %>
-            <%= "<label for=\"#{census.option_03}\">
-              #{census.option_03}</label>".html_safe %>
-          </li>
-        </ul>
-      </div>
+    <div class="cast_census_time">
+      <%= 'Time Left' %><br>
+      <%= census.time_left %>
+    </div>
 
-      <div class="cast_census_time">
-        <%= 'Time Left' %><br>
-        <%= @time_left %>
-      </div>
-      <% data = {
-        census.option_01 => results[0].to_i,
-        census.option_02 => results[1].to_i,
-        census.option_03 => results[2].to_i } %>
+    <% data = {
+      census.option_01 => results[0].to_i,
+      census.option_02 => results[1].to_i,
+      census.option_03 => results[2].to_i } %>
 
       <div class="chart">
         <%= pie_chart data, height: "160px", colors: Color.pick %>
@@ -45,14 +39,14 @@
 
       <div class="pagination">
         <%= will_paginate @censuses_active,
-          param_name: 'active',
-          page_links: false,
+          param_name:    'active',
+          page_links:     false,
           next_label:     image_tag("arrow_next.png", size: "50"),
           previous_label: image_tag("arrow_back.png", size: "50")%>
       </div>
-
-      <input type="submit" name="commit" value="Create Opinion"
-        class="button-large">
-    </form>
+      <div class="button_center">
+        <%= f.button :submit, 'Cast Opinion'%>
+      </div>
+  <% end %>
   </div>
 <% end %>

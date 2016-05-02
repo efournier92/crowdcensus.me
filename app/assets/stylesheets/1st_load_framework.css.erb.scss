@@ -72,8 +72,15 @@ main label {
   padding-bottom: auto;
 }
 
+.cast_census_description_container {
+  height:    10vh;
+  width:    100%;
+  display: table;
+}
+
 .cast_census_description {
-  width:          100%;
+  display: table-cell;
+  vertical-align: middle;
   color:       #03182d;
   font-weight:    bold;
   text-align:   center;
@@ -88,16 +95,15 @@ main label {
 .cast_census_option {
   text-align:   center;
   width: 100%;
-  text-align: center;
+  height: 16vh;
 }
 
-.cast_census_option form {
-  text-align: center;
+.cast_census_option label {
+  margin-left: -10px;
 }
 
 .chart {
   position:  relative;
-  margin-top: -8px;
   padding-left:  auto;
   padding-right: auto;
   z-index:          0;
@@ -105,10 +111,10 @@ main label {
 
 .cast_census_time {
   width:         100%;
+  height:         10%;
   text-align:  center;
+  margin-top:     10px;
   font-size:     12px;
-  margin-top:   -16px;
-  margin-bottom: -5px;
 }
 
 .cast_census_submit {
@@ -163,7 +169,8 @@ main label {
 }
 
 .alert-box {
-  position: absolute;
+  position: absolute;;
+  top: 40%;
 }
 
 .top {
@@ -281,13 +288,13 @@ h2 {
 }
 
 ul li{
-  color: #103549;
+  color: red;
   display: block;
   width: 100%;
 }
 
 form ul li{
-  color: #103549;
+  color: red;
   display: block;
   width: 100%;
   padding-right: 11px;
@@ -301,22 +308,24 @@ ul li input[type=radio]{
 ul li label{
   text-align:             center;
   font-size: 15px;
-  padding-bottom: 8px;
+  margin-top: 4px;
+  margin-bottom: 18px;
   line-height: 18px;
   cursor: pointer;
   -webkit-transition: all 0.25s linear;
 }
 
 ul li:hover label{
-	color: #84a0d2;
+	color: #0b559f;
 }
 
-input[type=radio]:checked ~ .check::before{
-  background: #0DFF92;
+.radio label{
+    font-weight: bold;
+    color: #539dcc;
 }
 
-input[type=radio]:checked ~ label{
-  color: #a0c3ff;
+.highlightBackground {
+    background-color: #bad6ea;
 }
 
 .filler {
@@ -365,8 +374,8 @@ input[type=radio]:checked ~ label{
   width:          100%;
   color:       #03182d;
   font-weight:    bold;
-  text-align:   left;
-  padding-top:    6px;
+  text-align:     left;
+  padding-top:     6px;
   padding-right:   9px;
   padding-left:    9px;
   margin-bottom:   8px;
@@ -430,7 +439,7 @@ input[type=radio]:checked ~ label{
   width:         100%;
   text-align:  center;
   font-size:     12px;
-  margin-top:   -16px;
+  margin-top:   -30px;
   margin-bottom: -5px;
 }
 
@@ -438,4 +447,10 @@ input[type=radio]:checked ~ label{
   display:       table-cell;
   text-align:        center;
   vertical-align:    middle;
+}
+
+.new_census_container {
+  width: 75%;
+  margin-right: auto;
+  margin-left:  auto;
 }
