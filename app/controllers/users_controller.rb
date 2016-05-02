@@ -10,5 +10,7 @@ class UsersController < ApplicationController
     unless @user == current_user
       redirect_to :back, :alert => "Access denied."
     end
+    @user_censuses = Census.where(user: current_user).paginate(
+      page: params[:ended], per_page: 1)
   end
 end
