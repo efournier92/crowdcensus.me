@@ -1,25 +1,28 @@
 module GlobalData
   def self.set_duration
-    duration = [2, 24, 72].sample
-    timestamp = DateTime.now + duration.hours
-    duration = [{hours_string: '72 Hours', hours_int: 72}, {hours_string: '24 Hours', hours_int: 24}, {hours_string: '2 Hours', hours_int: 2}].sample
-    [duration[:hours_string], duration[:hours_int]]
+    duration = [{hours_string: '72 Hours', hours_int: 72},
+      {hours_string: '24 Hours', hours_int: 24},
+      {hours_string: '2 Hours', hours_int: 2}].sample
+    timestamp = DateTime.now + duration[:hours_int]
+    [timestamp, duration[:hours_string], duration[:hours_int]]
   end
 
   def self.choose_and_create
+    duration_hash = GlobalData.set_duration
     new_census = CENSUSDATA.sample
     Census.create(
       description:  new_census[:description],
       option_01:    new_census[:option_01],
       option_02:    new_census[:option_02],
       option_03:    new_census[:option_03],
-      end_time:     new_census[:end_time],
-      active:       new_census[:active],
+      duration:     duration_hash[1],
+      end_time:     Time.now + duration_hash[2].hours,
+      active:       1,
       user_id:      new_census[:user_id]
     )
   end
 
-  def self.cast_censuses
+  def self.cast_opinions
     active = Census.where(active: true).sort_by{|census| census.created_at}.reverse
     active.each do |census|
       6.times do

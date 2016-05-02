@@ -4,7 +4,6 @@ class Census < ActiveRecord::Base
   validates :description, presence: true
   validates :option_01,   presence: true
   validates :option_02,   presence: true
-  validates :active,      inclusion: { in: [true, false] }
   validates :end_time,    presence: true
   validates :user_id,     presence: true
 
@@ -25,11 +24,20 @@ class Census < ActiveRecord::Base
     [opinions_01, opinions_02, opinions_03]
   end
 
+  def time_left
+    seconds_left = self.end_time - Time.now
+    hours_left   = seconds_left / 3600
+    hours_left_int = hours_left.to_i
+    minutes_left_unform = ((hours_left - hours_left_int) * 60).to_i
+    minutes_left = sprintf '%02d', minutes_left_unform
+    "#{hours_left_int}:#{minutes_left}"
+  end
+
   def self.check_active
     active = Census.all.where(active: true)
     active.each do |census|
       if census.end_time < DateTime.now
-        census.active = false
+        census.toggle! :active
       end
     end
   end
