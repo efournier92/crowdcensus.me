@@ -1,6 +1,3 @@
-<h3>User</h3>
-<p>Name: <%= @user.name if @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
 <div class="section">
 <% @user_censuses.each do |census| %>f
   <% results = census.results %>
@@ -23,6 +20,15 @@
       <%= census.description %>
     </div>
 
+    <% data = {
+      census.option_01 => results[0].to_i,
+      census.option_02 => results[1].to_i,
+      census.option_03 => results[2].to_i } %>
+
+    <div class="feed_chart">
+      <%= pie_chart data, height: "120px", colors: Color.pick %>
+    </div>
+
     <div class="feed_details">
       <%= "#{census.option_01} (#{results[0]} votes)" %> <br>
       <%= "#{census.option_02} (#{results[1]} votes)" %> <br>
@@ -33,15 +39,6 @@
         <%= "Posted By: #{census.user.first_name} #{census.user.last_name}" %> <br>
         <%= "For: #{census.duration}" %> <br>
         <%= census.end_time.strftime("Ended On %m/%d/%Y") %> <br>
-      </div>
-
-      <% data = {
-        census.option_01 => results[0].to_i,
-        census.option_02 => results[1].to_i,
-        census.option_03 => results[2].to_i } %>
-
-      <div class="feed_chart">
-        <%= pie_chart data, height: "120px", colors: Color.pick %>
       </div>
     </div>
   <% end %>
