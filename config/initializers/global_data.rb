@@ -1,4 +1,5 @@
 module GlobalData
+  
   def self.set_duration
     duration = [{hours_string: '72 Hours', hours_int: 72},
       {hours_string: '24 Hours', hours_int: 24},
@@ -194,12 +195,14 @@ module GlobalData
     { description:  "What would you rather fight?",
       option_01:    'Horse-sized duck',
       option_02:    'Duck-sized horse',
+      option_03:    'Liger',
       end_time:     GlobalData.set_duration,
       active:       true,
       user_id:      rand(1..9) },
     { description:  "Would you play Russian Roulette once for $100k?",
       option_01:    'Yes',
-      option_02:    'No',
+      option_02:    'Maybe',
+      option_03:    'No',
       end_time:     GlobalData.set_duration,
       active:       true,
       user_id:      rand(1..9) },
@@ -541,7 +544,8 @@ module GlobalData
       user_id:      rand(1..9) },
     { description:  "Should I get a hedgehog?",
       option_01:    'Yes',
-      option_02:    'No',
+      option_02:    'Maybe',
+      option_03:    'No',
       end_time:     GlobalData.set_duration,
       active:       true,
       user_id:      rand(1..9) },
@@ -554,7 +558,8 @@ module GlobalData
       user_id:      rand(1..9) },
     { description:  "Should I enroll in a coding bootcamp",
       option_01:    'Yes',
-      option_02:    'No',
+      option_02:    'Maybe',
+      option_03:    'No',
       end_time:     GlobalData.set_duration,
       active:       true,
       user_id:      rand(1..9) },
@@ -610,6 +615,7 @@ module GlobalData
     { description:  "Which type of clock do you prefer?",
       option_01:    'Digital',
       option_02:    'Analog',
+      option_03:    'Sundial',
       end_time:     GlobalData.set_duration,
       active:       true,
       user_id:      rand(1..9) },
@@ -686,6 +692,7 @@ module GlobalData
     { description:  "Which type of guitar sounds better to you?",
       option_01:    'Acoustic',
       option_02:    'Electric',
+      option_03:    'Cigar Box',
       end_time:     GlobalData.set_duration,
       active:       true,
       user_id:      rand(1..9) },
@@ -732,74 +739,5 @@ module GlobalData
       active:       true,
       user_id:      rand(1..9) },
   ].freeze
-
-  USERDATA = [
-    { first_name: 'Eric',
-      last_name: 'Fournier',
-      email: 'efournier92@gmail.com',
-      password: 'fifty5018',
-      password_confirmation: 'fifty5018' },
-
-    { first_name: 'Mike',
-      last_name: 'Fletcher',
-      email: 'mfletcher@harvard.edu',
-      password: 'phoebe123',
-      password_confirmation: 'phoebe123' },
-
-    { first_name: 'Tabor',
-      last_name: 'Stewart',
-      email: 'tstewart74@comcast.net',
-      password: 'nirVana1994',
-      password_confirmation: 'nirVana1994' },
-
-    { first_name: 'Janet',
-      last_name: 'Campell',
-      email: 'swimteam@zoho.com',
-      password: '$1234Lola!!',
-      password_confirmation: '$1234Lola!!' },
-
-    { first_name: 'Oliver',
-      last_name: 'Smith',
-      email: 'wordSmith@verizon.com',
-      password: '11-25PumpkinPie',
-      password_confirmation: '11-25PumpkinPie' },
-
-    { first_name: 'Ken',
-      last_name: 'Cassidy',
-      email: '1fleweast!@gmail.com',
-      password: '2fluWest!',
-      password_confirmation: '2fluWest!' },
-
-    { first_name: 'Jed',
-      last_name: 'Paisley',
-      email: 'jedpaisley@giant.com',
-      password: '19lesPAul62',
-      password_confirmation: '19lesPAul62' },
-
-    { first_name: 'Amanda',
-      last_name: 'Mullen',
-      email: 'amullen@twc.net',
-      password: 'alwaysBsinging!',
-      password_confirmation: 'alwaysBsinging!' },
-
-    { first_name: 'Alexis',
-      last_name: 'Ryder',
-      email: 'horsebackryder@4H.com',
-      password: 'Secretariat73',
-      password_confirmation: 'Secretariat73' },
-
-    { first_name: 'Sunni',
-      last_name: 'Faye',
-      email: 'sunniwithachance@bishops.edu',
-      password: '$JingKames',
-      password_confirmation: '$JingKames' },
-
-    { first_name: 'Jackie',
-      last_name: 'Rockwell',
-      email: 'jrockwell89@gmail.com',
-      password: 'WordUp89',
-      password_confirmation: 'WordUp89' },
-
-    ].freeze
 
 end

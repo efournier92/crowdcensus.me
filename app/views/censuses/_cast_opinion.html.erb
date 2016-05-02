@@ -39,13 +39,13 @@
 
       <div class="pagination">
         <%= will_paginate @censuses_active,
-          param_name: 'active',
-          page_links: false,
+          param_name:    'active',
+          page_links:     false,
           next_label:     image_tag("arrow_next.png", size: "50"),
           previous_label: image_tag("arrow_back.png", size: "50")%>
       </div>
       <div class="button_center">
-        <%= f.button :submit, 'Poll Crowdcensus'%>
+        <%= f.button :submit, 'Cast Opinion'%>
       </div>
   <% end %>
   </div>

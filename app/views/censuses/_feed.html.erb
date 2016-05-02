@@ -1,14 +1,14 @@
-<% @censuses_closed.each do |census| %>
+<% @censuses_closed.each do |census| %>f
   <% results = census.results %>
   <div class="feed">
     <div class="feed_header_container">
-    <div class="feed_header">
-      <strong>Closed Feed</strong>
-    </div>
+      <div class="feed_header">
+        <strong>Closed Feed</strong>
+      </div>
     </div>
     <div class="feed_pagination">
-      <%= will_paginate @censuses_active,
-      param_name: 'active',
+      <%= will_paginate @censuses_closed,
+      param_name: 'ended',
       page_links: false,
       next_label:     image_tag("arrow_next.png", size: "50"),
       previous_label: image_tag("arrow_back.png", size: "50")%>
@@ -18,9 +18,9 @@
       </div>
 
       <div class="feed_details">
-        <%= "#{census.option_01} (#{} votes)" %> <br>
-        <%= "#{census.option_02} (#{} votes)" %> <br>
-        <%= "#{census.option_03} (#{} votes)" %> <br>
+        <%= "#{census.option_01} (#{results[0]} votes)" %> <br>
+        <%= "#{census.option_02} (#{results[1]} votes)" %> <br>
+        <%= "#{census.option_03} (#{results[2]} votes)" %> <br>
         </ul>
       </div>
 
