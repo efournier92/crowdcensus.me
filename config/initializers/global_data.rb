@@ -1,5 +1,5 @@
 module GlobalData
-  
+
   def self.set_duration
     duration = [{hours_string: '72 Hours', hours_int: 72},
       {hours_string: '24 Hours', hours_int: 24},
@@ -19,6 +19,21 @@ module GlobalData
       duration:     duration_hash[1],
       end_time:     Time.now + duration_hash[2].hours,
       active:       1,
+      user_id:      new_census[:user_id]
+    )
+  end
+
+  def self.choose_and_create_closed
+    duration_hash = GlobalData.set_duration
+    new_census = CENSUSDATA.sample
+    Census.create(
+      description:  new_census[:description],
+      option_01:    new_census[:option_01],
+      option_02:    new_census[:option_02],
+      option_03:    new_census[:option_03],
+      duration:     duration_hash[1],
+      end_time:     Time.now + duration_hash[2].hours,
+      active:       0,
       user_id:      new_census[:user_id]
     )
   end

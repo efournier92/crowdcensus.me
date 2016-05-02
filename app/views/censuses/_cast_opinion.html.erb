@@ -45,7 +45,9 @@
           previous_label: image_tag("arrow_back.png", size: "50")%>
       </div>
       <div class="button_center">
-        <%= f.button :submit, 'Cast Opinion'%>
+        <% unless current_user == nil %>
+          <%= f.button :submit, 'Cast Opinion'%>
+        <% end %>
       </div>
   <% end %>
   </div>

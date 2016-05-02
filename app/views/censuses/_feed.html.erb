@@ -1,5 +1,4 @@
-<% @censuses_closed.each do |census| %>f
-  <% results = census.results %>
+<% @censuses_closed.each do |census| %>
   <div class="feed">
     <div class="feed_header_container">
       <div class="feed_header">
@@ -18,6 +17,7 @@
       </div>
 
       <div class="feed_details">
+        <% results = census.results %>
         <%= "#{census.option_01} (#{results[0]} votes)" %> <br>
         <%= "#{census.option_02} (#{results[1]} votes)" %> <br>
         <%= "#{census.option_03} (#{results[2]} votes)" %> <br>

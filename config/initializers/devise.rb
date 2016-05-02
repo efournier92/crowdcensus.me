@@ -22,4 +22,6 @@ Devise.setup do |config|
 
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
 
+  config.secret_key = 'aa7c74517fac885ec031b11e2cfff3b82317e2b59164b51e7655097811549d1855fcf3f8991910a255fd136cc17e4b55c50b79091412b37815578bb43ecd8b32'
+
 end

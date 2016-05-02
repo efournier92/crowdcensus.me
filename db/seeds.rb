@@ -182,7 +182,21 @@ User.create!(
   password_confirmation: 'Jaws2&3D'
 )
 
-5.times do
+15.times do
   GlobalData.choose_and_create
   GlobalData.cast_opinions
+end
+
+5.times do
+  GlobalData.choose_and_create_closed
+  closed = Census.where(active: false).sort_by{|census| census.created_at}.reverse
+  closed.each do |census|
+    6.times do
+      Opinion.create(
+        user_id:    rand(1..19),
+        census_id:  census.id,
+        chosen_option: rand(1..3)
+      )
+    end
+  end
 end
