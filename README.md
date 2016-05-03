@@ -46,4 +46,5 @@ A place for people to crowdsource their questions in a fun and novel way. Users 
 
 ####Mobile
 ![Home Page](http://gdurl.com/h_iw)
+
 ![Closed Feed](http://gdurl.com/rwQ3)
