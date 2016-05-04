@@ -24,6 +24,7 @@ A place for people to crowdsource their questions in a fun and novel way. Users 
 
 ## Technologies Utilized
 
+* Ruby
 * Rails
 * Postgres SQL
 * Devise
