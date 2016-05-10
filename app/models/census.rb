@@ -37,7 +37,7 @@ class Census < ActiveRecord::Base
     active = Census.all.where(active: true)
     active.each do |census|
       if census.end_time < DateTime.now
-        census.toggle! :active
+        census.update(active: false)
       end
     end
   end

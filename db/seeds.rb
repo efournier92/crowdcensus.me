@@ -15,7 +15,7 @@ User.create!(
 )
 
 User.create!(
-  first_name:            'Tabor',
+  first_name:            'Taylor',
   last_name:             'Stewart',
   email:                 'lighttabor@gmail.com',
   password:              'phoebe123',

@@ -13,8 +13,19 @@ class OpinionsController < ApplicationController
   def create
     opinion = Opinion.new(opinion_params)
 
-    opinion.user = current_user
-    opinion.census   = Census.find(params[:census_id])
+    opinion.user     = current_user
+    census           = Census.find(params[:census_id])
+    chosen_option    = opinion_params["chosen_option"]
+    opinion.census   = census
+    
+    if chosen_option == census.option_01
+      opinion.chosen_option = 1
+    elsif chosen_option == census.option_02
+      opinion.chosen_option = 2
+    else
+      opinion.chosen_option = 3
+    end
+
     if opinion.save
       flash[:success] = 'Opinion Cast!'
       redirect_to censuses_path
