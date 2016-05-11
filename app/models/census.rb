@@ -1,5 +1,6 @@
 class Census < ActiveRecord::Base
   belongs_to :user
+  has_many   :opinions, dependent: :destroy
 
   validates :description, presence: true
   validates :option_01,   presence: true

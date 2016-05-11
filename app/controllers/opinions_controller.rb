@@ -1,5 +1,6 @@
 class OpinionsController < ApplicationController
   skip_before_action :verify_authenticity_token
+  belongs_to :census
   def new
     @opinion = Opinion.new
     @census  =
@@ -17,7 +18,7 @@ class OpinionsController < ApplicationController
     census           = Census.find(params[:census_id])
     chosen_option    = opinion_params["chosen_option"]
     opinion.census   = census
-    
+
     if chosen_option == census.option_01
       opinion.chosen_option = 1
     elsif chosen_option == census.option_02

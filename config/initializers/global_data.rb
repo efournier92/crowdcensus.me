@@ -10,7 +10,7 @@ module GlobalData
 
   def self.choose_and_create
     duration_hash = GlobalData.set_duration
-    new_census = CENSUSDATA.sample
+    new_census    = CENSUSDATA.sample
     Census.create(
       description:  new_census[:description],
       option_01:    new_census[:option_01],
@@ -21,6 +21,10 @@ module GlobalData
       active:       1,
       user_id:      new_census[:user_id]
     )
+  end
+
+  def self.cleanup_oldest
+    Census.where(active: false).last.destroy
   end
 
   def self.choose_and_create_closed
