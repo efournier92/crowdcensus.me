@@ -1,6 +1,6 @@
 class OpinionsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  belongs_to :census
+  
   def new
     @opinion = Opinion.new
     @census  =
