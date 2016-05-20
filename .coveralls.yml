@@ -1,2 +1,2 @@
 require 'simplecov'
-repo_token: hUGSzUrWi1DP515F7ISE3amZmXGo284zI
+COVERALLS_REPO_TOKEN=hUGSzUrWi1DP515F7ISE3amZmXGo284zI bundle exec rspec spec

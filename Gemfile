@@ -20,6 +20,7 @@ gem 'simple_form'
 gem 'chartkick'
 gem 'foundation-rails', '~> 5.5'
 gem 'zurb-foundation'
+gem 'coveralls', require: false
 
 gem 'faker'
 gem 'will_paginate'
@@ -52,7 +53,6 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem 'coveralls', require: false
 end
 
 group :production do
