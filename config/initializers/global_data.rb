@@ -29,7 +29,7 @@ module GlobalData
 
   def self.choose_and_create_closed
     duration_hash = GlobalData.set_duration
-    new_census = CENSUSDATA.sample
+    new_census = CENSUSDATA.samplew
     Census.create(
       description:  new_census[:description],
       option_01:    new_census[:option_01],
