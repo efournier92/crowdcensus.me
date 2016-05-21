@@ -4,10 +4,11 @@ feature 'user adds census' do
   let!(:census) { FactoryGirl.create(:census) }
   let!(:user)   { FactoryGirl.create(:user) }
   scenario 'accesses new census page from home' do
-    visit root_path
-    click_link('New Census')
-
-    expect(page).to have_content('Poll Crowdcensus')
+login_as(user, :scope => :user)
+visit root_path
+    click_on('New Census')
+		
+    expect(page).to have_content('Poll CrowdCensus')
   end
 
   scenario 'creates a new census' do

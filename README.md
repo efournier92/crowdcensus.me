@@ -12,7 +12,6 @@ A place for people to crowdsource their questions in a fun and novel way. Users 
 ![ER Diagram](http://gdurl.com/TiXw)
 
 ##Features
-
 * User registers
 * User signs in
 * User adds a new census
@@ -24,7 +23,6 @@ A place for people to crowdsource their questions in a fun and novel way. Users 
 * Admin deletes user
 
 ## Technologies Utilized
-
 * Ruby
 * Rails
 * Postgres SQL
@@ -44,6 +42,7 @@ A place for people to crowdsource their questions in a fun and novel way. Users 
 
 ####Desktop
 ![Home Page](http://gdurl.com/LWLr)
+
 ![Cast Census Page](http://gdurl.com/S-4A)
 
 ####Mobile

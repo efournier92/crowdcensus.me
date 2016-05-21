@@ -2,8 +2,11 @@ require 'rails_helper'
 
 feature 'user views census index page' do
   let!(:census) { FactoryGirl.create(:census) }
+	let!(:user) { FactoryGirl.create(:user) }
+	
   scenario 'displays static content' do
-    visit censuses_path
+		login_as(user)
+    visit root_path 
     expect(page).to have_button('Cast Opinion')
     expect(page).to have_content('Posted By:')
     expect(page).to have_content('For:')
