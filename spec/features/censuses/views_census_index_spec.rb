@@ -5,16 +5,14 @@ feature 'user views census index page' do
 	let!(:user) { FactoryGirl.create(:user) }
 	
   scenario 'displays static content' do
-		login_as(user)
-    visit root_path 
-    expect(page).to have_button('Cast Opinion')
-    expect(page).to have_content('Posted By:')
-    expect(page).to have_content('For:')
+		login_as(user, scope: :user)
+    visit root_path
+		expect(page).to have_button('Cast Opinion')
   end
 
   scenario 'displays dynamic content' do
-    visit censuses_path
+    visit root_path
 
-    expect(page).to have_content('Ringo')
+    expect(page).to have_content('Meat Loaf')
   end
 end
