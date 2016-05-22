@@ -22,7 +22,6 @@ gem 'foundation-rails', '~> 5.5'
 gem 'zurb-foundation'
 gem 'coveralls', require: false
 
-gem 'faker'
 gem 'will_paginate'
 gem 'will_paginate-foundation'
 
