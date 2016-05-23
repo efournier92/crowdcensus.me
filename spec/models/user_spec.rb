@@ -1,13 +1,11 @@
-describe User do
+RSpec.describe User, type: :model  do
 
-  before(:each) { @user = User.new(email: 'user@example.com') }
+let!(:user) {FactoryGirl.create(:user) }
+  
+it { should respond_to(:name) }
 
-  subject { @user }
-
-  it { should respond_to(:email) }
-
-  it "#email returns a string" do
-    expect(@user.email).to match 'user@example.com'
+  it "#name returns a string" do
+    expect(user.name).to match 'Ringo Star'
   end
 
 end
