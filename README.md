@@ -3,6 +3,7 @@
 ![Build Status](https://codeship.com/projects/5cdff990-01e8-0134-5ed2-5a840fcbac76/status?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/efournier92/crowdcensus.me/badge.svg?branch=master)](https://coveralls.io/github/efournier92/crowdcensus.me?branch=master)
 
+
 ##[Visit CrowdCensus](http://www.crowdcensus.me/)
 
 ##Description

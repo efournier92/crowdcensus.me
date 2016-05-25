@@ -4,6 +4,7 @@ module WillPaginateHelper
       options[:params] ||= {}
       options[:params]['_'] = nil
       super(collection, options, template)
+			binding.pry
     end
 
     protected

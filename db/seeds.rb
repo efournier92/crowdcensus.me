@@ -1,11 +1,3 @@
-AdminUser.create!(
-  first_name:            'Eric',
-  last_name:             'Fournier',
-  email:                 'efournier92@gmail.com',
-  password:              'fifty5018',
-  password_confirmation: 'fifty5018'
-)
-
 User.create!(
   first_name:            'Mike',
   last_name:             'Fletcher',

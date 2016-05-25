@@ -1,11 +1,12 @@
 RSpec.describe User, type: :model  do
 
-let!(:user) {FactoryGirl.create(:user) }
+let!(:user) { User.first } 
   
 it { should respond_to(:name) }
 
   it "#name returns a string" do
-    expect(user.name).to match 'Ringo Star'
+		user = FactoryGirl.create(:user)
+		expect(user.name).to match 'Ringo Star'
   end
 
 end
