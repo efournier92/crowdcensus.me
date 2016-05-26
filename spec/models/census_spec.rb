@@ -8,8 +8,12 @@ RSpec.describe Census, type: :model do
 		end
 		it 'returns false if Census has already expired' do
 			census = FactoryGirl.create(:census)
-
 			expect(census.active?).to equal(true)
+		end
+	end
+	describe '#check_active' do
+		it 'iterates through all currently active censuses' do
+			expect(Census.check_active).to eq([]) 
 		end
 	end
 end
