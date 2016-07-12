@@ -23,6 +23,7 @@ A place for people to crowdsource their questions in a fun and novel way. Users 
 * Admin deletes census
 * Admin deletes user
 
+
 ## Technologies Utilized
 * Ruby
 * Rails
