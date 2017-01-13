@@ -1,3 +1,3 @@
-/Users/Misigno/.gitattributes
+*.rb linguist-language=Ruby
 app/* linguist-vendored
 
