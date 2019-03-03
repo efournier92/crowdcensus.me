@@ -18,7 +18,7 @@ module GlobalData
       option_03:    new_census[:option_03],
       duration:     duration_hash[1],
       end_time:     Time.now + duration_hash[2].hours,
-      active:       2,
+      active:       true,
       user_id:      new_census[:user_id]
     )
   end
