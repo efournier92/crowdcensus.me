@@ -56,6 +56,8 @@ A place for people to crowdsource their questions in a fun and novel way. Users 
 - [Ruby 2.3.0](https://www.ruby-lang.org/en/news/2015/12/25/ruby-2-3-0-released/)
 - [Postgres SQL](https://www.postgresql.org/)
 
+### `.env`
+
 ## Building
 1. `bundle`
 2. `sudo -u postgres createdb crowdcensus_development`

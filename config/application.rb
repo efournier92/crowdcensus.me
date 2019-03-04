@@ -17,6 +17,5 @@ module Crowdcensus
     end
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
     config.assets.precompile += %w( vendor/modernizr )
-    config.active_record.raise_in_transactional_callbacks = true
   end
 end
