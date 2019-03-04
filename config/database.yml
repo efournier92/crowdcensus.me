@@ -9,20 +9,18 @@ development:
 
 test:
   adapter:  postgresql
-  host:     localhost
+  host:     ''
   encoding: unicode
   database: crowdcensus_test
   pool:     5
-  username: crowdcensus
-  password:
+  username: misigno
   template: template0
 
 production:
   adapter:  postgres
-  host:     localhost
+  host:     ''
   encoding: unicode
   database: crowdcensus_production
   pool:     5
-  username: crowdcensus
-  password:
+  username: misigno
   template: template0
