@@ -1,4 +1,4 @@
-# ![CrowdCensus](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/logo/CrowdCensus_Logo.png)
+# ![CrowdCensus](https://github.com/efournier93/CrowdCensus/blob/master/app/assets/img/logo/CrowdCensus_Logo.png)
 
 ![Build Status](https://codeship.com/projects/5cdff990-01e8-0134-5ed2-5a840fcbac76/status?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/efournier92/crowdcensus.me/badge.svg?branch=master)](https://coveralls.io/github/efournier92/crowdcensus.me?branch=master)
@@ -23,35 +23,29 @@ A place for people to crowdsource their questions in a fun and novel way. Users 
 
 ## Features
 
-### Authentication
-
-#### Sign Up
-![Sign Up Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Auth_Sign_Up.png)
-
-#### Sign In
-![Sign In Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Auth_Sign_In.png)
-
-### Census
-
-#### View Active
+### View Active Census
 ![View Active Census Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/View_Active_Census.png)
 
-#### View Feedback
+### View Census Feedback
 ![View Census Feedback Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/View_Census_Feedback.png)
 
-#### View Closed
+### View Closed Census
 ![View Closed Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/View_Closed_Census.png)
 
-#### Create
+### Create Census
 ![Create Census Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Create_Census.png)
 
-#### Select Duration
+### Select New Census Duration
 ![ Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Create_Census_Select_Duration.png)
 
-#### Choose a Resolution
+### Choose a Resolution
 ![ Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Choose_Census_Resolution.png)
 
-### Navigation
+### Sign Up
+![Sign Up Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Auth_Sign_Up.png)
+
+### Sign In
+![Sign In Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Auth_Sign_In.png)
 
 #### Select Page
 ![ Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Select_Page.png)
