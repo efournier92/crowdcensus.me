@@ -11,7 +11,6 @@
 - [Stack](#stack)
 - [Configuration](#configuration)
 - [Building](#building)
-- [Testing](#testing)
 - [Contributing](#contributing)
 - [Licensing](#licensing)
 
