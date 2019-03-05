@@ -1,4 +1,4 @@
-class CreateComments < ActiveRecord::Migration[5.1.4]
+class CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
       t.belongs_to  :user,      null: false

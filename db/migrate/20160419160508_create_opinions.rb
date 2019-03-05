@@ -1,4 +1,4 @@
-class CreateOpinions < ActiveRecord::Migration[5.1.4]
+class CreateOpinions < ActiveRecord::Migration
   def change
     create_table :opinions do |t|
       t.belongs_to  :user,           null: false

@@ -1,4 +1,4 @@
-class CreateCensuses < ActiveRecord::Migration[5.1.4]
+class CreateCensuses < ActiveRecord::Migration
   def change
     create_table :censuses do |t|
       t.string      :description,  null: false
