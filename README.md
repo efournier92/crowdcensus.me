@@ -19,20 +19,45 @@
 A place for people to crowdsource their questions in a fun and novel way. Users post a question and 2-3 potential resolutions, then other's vote on which resolution they see as best.
 
 ## Demo
-[CrowdCensus.me](http://crowdcensus.herokuapp.com)
+[CrowdCensus.me](http://crowdcensus.herokuapp.com/)
 
 ## Features
-- User registers
-- User signs in
-- User adds a new census
-- User casts opinion on active CrowdCensus
-- User views recently closed feed
-- User views own profile page
-- User views other profile page
-- Admin deletes census
-- Admin deletes user
+
+### Authentication
+
+#### Sign Up
+![Sign Up Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Auth_Sign_Up.png)
+
+#### Sign In
+![Sign In Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Auth_Sign_In.png)
+
+### Census
+
+#### View Active
+![View Active Census Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/View_Active_Census.png)
+
+#### View Feedback
+![View Census Feedback Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/View_Census_Feedback.png)
+
+#### View Closed
+![View Closed Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/View_Closed_Census.png)
+
+#### Create
+![Create Census Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Create_Census.png)
+
+#### Select Duration
+![ Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Create_Census_Select_Duration.png)
+
+#### Choose a Resolution
+![ Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Choose_Census_Resolution.png)
+
+### Navigation
+
+#### Select Page
+![ Screen](https://github.com/efournier92/CrowdCensus/blob/master/app/assets/img/screenshots/Select_Page.png)
 
 ## Development Philosophy
+This was the first full web application I built on my own. I'd been studying Ruby on Rails at the time, and built this over a two-week period in 2016, as my final project at [Launch Academy](https://launchacademy.com/). It shows that I had a long way to go and much left to learn, but the fact that runs it runs as a deployable web app was extremely exciting for me at the time. Although I'd previously taken it down, I upgraded it to Ruby 2.6 and Rails 5.1 in 2019, then re-deployed it to Heroku. I intend to leave it up as testament to where I started, and as inspiration to never stop challenging myself where I'm going.
 
 ## Stack
 - Ruby
@@ -53,10 +78,8 @@ A place for people to crowdsource their questions in a fun and novel way. Users 
 ## Configuration
 
 ### System Dependencies
-- [Ruby 2.3.0](https://www.ruby-lang.org/en/news/2015/12/25/ruby-2-3-0-released/)
+- [Ruby 2.6.1](https://www.ruby-lang.org/en/news/2015/12/25/ruby-2-3-0-released/)
 - [Postgres SQL](https://www.postgresql.org/)
-
-### `.env`
 
 ## Building
 1. `bundle`
