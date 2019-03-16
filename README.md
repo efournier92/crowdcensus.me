@@ -8,10 +8,10 @@
 - [Demo](#demo)
 - [Development Philosophy](#development-philosophy)
 - [Stack](#stack)
-- [Configuration](#configuration)
-- [Building](#building)
-- [Contributing](#contributing)
-- [Licensing](#licensing)
+- [Configure](#configure)
+- [Build](#build)
+- [Contribute](#contribute)
+- [License](#license)
 - [Features](#features)
 
 ## Overview
@@ -39,28 +39,28 @@ This was the first full web application I built on my own. I'd been studying [Ru
 - [Chartkick](https://chartkick.com/)
 - [will_paginate](https://github.com/mislav/will_paginate)
 
-### Testing
+### Test
 - [RSpec](http://rspec.info/)
 - [Capybara](https://github.com/teamcapybara/capybara)
 - [Selenium](https://www.seleniumhq.org/)
 
-## Configuration
+## Configure
 
 ### System Dependencies
 - [Ruby 2.6.1](https://www.ruby-lang.org/en/news/2015/12/25/ruby-2-3-0-released/)
 - [Postgres SQL](https://www.postgresql.org/)
 
-## Building
+## Build
 1. `bundle`
 2. `sudo -u postgres createdb crowdcensus_development`
 3. `rake db:migrate RAILS_ENV=development`
 4. `rake db:seed`
 5. `rails s`
 
-## Contributing
+## Contribute
 If you have feature suggestions, please contact me here or at efournier92@gmail.com. If you'd like to submit a pull request, please feel free to, and I'll review merge it at my earliest convenience!
 
-## Licensing
+## License
 This project is provided under the [`MIT`](https://opensource.org/licenses/MIT) licence and I hereby grant rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software without limitation, provided the resulting software also carries the same open-source licensing statement.
 
 ## Features
