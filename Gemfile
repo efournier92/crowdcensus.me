@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.6.1'
 
-gem 'rails', '5.1.4'
+gem 'rails', '5.1.6.2'
 gem 'actionpack'
 gem 'activemodel'
 
